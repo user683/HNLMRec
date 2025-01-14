@@ -28,6 +28,14 @@ In our paper, we conducted experiments using four datasets ( Toys & Games, CDs &
 Yelp2018, Amazon Electronics 2023), among which the Amazon Fashion dataset was primarily 
 used to validate the generalization capability of the fine-tuned model on new datasets. 
 The statistical information for all datasets is presented in the table below:
+
+|         Dataset         | #Users | #Items | #Interactions | Density     |
+|:-----------------------:|:------:|:------:|:-------------:|:-----------:|
+|      Toys & Games       | 7,809  | 6,309  |    216,407    | 4.4 × 10⁻³  |
+|       CDs & Vinyl       | 7,175  | 10,611 |   1,153,797   | 1.5 × 10⁻³  |
+|        Yelp2018         | 8,090  | 13,878 |    398,216    | 3.5 × 10⁻³  |
+| Amazon Electronics 2023 | 8,735  | 13,143 |    354,933    | 3.1 × 10⁻³  |
+
 ## 🔬 Model Training and Inference
 
 ## 👏 Acknowledgement
