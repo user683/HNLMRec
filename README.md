@@ -1,7 +1,7 @@
 # Can LLM-Driven Hard Negative Sampling Empower Graph Collaborative Filtering? Findings and Potentials.
 
 <p align="center">
-<img src="Model_Pipeline.jpg" alt="RLMRec" />
+<img src="model_pipeline.jpg" alt="RLMRec" />
 </p>
 
 This paper introduces the concept of Semantic Negative Sampling and explores how to optimize LLMs for 
