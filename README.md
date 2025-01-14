@@ -52,8 +52,9 @@ within the date range from 2010-01-01 to 2018-01-01.
 The pipeline of our model primarily consists of three parts: user-item profile generation, 
 semantic negative sampling, and semantic alignment.
 
-### User Profile and Item Profile Generation
-For the item profile generation, you need first to contract such json file, which is shown as follows:
+### User Profile and Item Profile Generation (e.g., Yelp2018)
+
+For the **item profile** generation, you need first to contract such json file, which is shown as follows:
 ```
 {
         "item_id": row['item_id'],
@@ -82,7 +83,13 @@ we can get the follow such an output:
      young adults."
 },
 ```
+For the generation of **user profiles**, readers also need to construct the input JSON, as shown below:
 
+```
+{
+ 
+}
+```
 
 ### Hard Negative Sampling
 
