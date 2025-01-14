@@ -15,4 +15,4 @@ Experimental results show that this framework outperforms traditional negative s
 LLM-driven recommendation methods across multiple datasets, providing new solutions for empowering 
 traditional RS with LLMs.
 
-## ![img.png](img.png) Environment
+## 📝 Environment
