@@ -16,7 +16,7 @@ indicate that challenging negative samples generated based on LLMs, when semanti
 into CF, can significantly improve CF performance, although there is still a certain gap compared to 
 traditional negative sampling methods. Further analysis reveals that this gap primarily arises from
 two major challenges: semantic shift and lack of behavioral constraints. To address these challenges, 
-we propose a framework called \textbf{HNLMRec}, which is based on fine-tuning LLMs supervised by collaborative 
+we propose a framework called **HNLMRec**, which is based on fine-tuning LLMs supervised by collaborative 
 signals. Experimental results show that this framework outperforms traditional negative sampling
 and other LLM-driven recommendation methods across multiple datasets, providing new solutions for 
 empowering traditional RS with LLMs. Additionally, we validate the excellent generalization ability
