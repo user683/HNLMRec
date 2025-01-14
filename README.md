@@ -64,7 +64,7 @@ For the **item profile** generation, you need first to contract such json file, 
 }
 ```
 Then you can run follow code to generate Item profile:
-```bash
+```
 python ./dataset_process/item_profile_generation/item_generation.py
 ```
 we can get the follow such an output:
@@ -97,7 +97,7 @@ items.append({
 }
 ```
 Then you can run follow code to generate User profile:
-```bash
+```
 python ./dataset_process/user_profile_generation/user_generation.py
 ```
 we can get the follow such a user profile output:
@@ -115,7 +115,28 @@ we can get the follow such a user profile output:
 ```
 
 ### Hard Negative Sampling
+The paper proposes two negative sampling methods: (1)the first directly generates hard negative samples for 
+user-item interaction pairs. (2) the second leverages collaborative signals 
+to supervise the fine-tuning of LLMs, thereby directly generating hard negative sample embeddings.
 
+- The first method for generating hard negative samples primarily consists of two steps: first, 
+  generating textual descriptions of the hard negative samples, and then converting the text into embeddings.
+  
+First, you need to construct the input data in JSON format:
+```
+{
+        f'USER INFORMATION: \n{{\n"user_id": "{row["user_id"]}", \n"user_profile": "{user_profile}"\n}}\n'
+        f'INTERACTED PRODUCT: \n{{\n"item_id": "{row["item_id"]}", \n"title": "{title}", \n"item_profile": "{item_profile}"\n}}'
+}
+```
+Then run the following code to obtain the titles of the hard negative samples：
+```
+python 
+```
+Finally, run the following code to obtain the text embeddings.
+```
+python 
+```
 
 
 ### 
