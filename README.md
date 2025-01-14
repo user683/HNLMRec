@@ -50,7 +50,7 @@ within the date range from 2010-01-01 to 2018-01-01.
 ## 🔬 Model Training and Inference
 
 The pipeline of our model primarily consists of three parts: **user-item profile generation**, 
-**semantic negative sampling**, and **semantic alignment**.
+**semantic negative sampling**, and **semantic alignment and Training**.
 ***
 ### User Profile and Item Profile Generation (e.g., Yelp2018)
 
@@ -160,6 +160,7 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
  ```
 
 ---
+### Training
 After obtaining the hard negative sample embeddings, you can run the following code 
 in `model/model_trianing/` to train recommendation models and infer:
 ```
