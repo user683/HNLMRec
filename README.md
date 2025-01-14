@@ -49,8 +49,8 @@ within the date range from 2010-01-01 to 2018-01-01.
 
 ## 🔬 Model Training and Inference
 
-The pipeline of our model primarily consists of three parts: user-item profile generation, 
-semantic negative sampling, and semantic alignment.
+The pipeline of our model primarily consists of three parts: **user-item profile generation**, 
+**semantic negative sampling**, and **semantic alignment**.
 
 ### User Profile and Item Profile Generation (e.g., Yelp2018)
 
@@ -72,15 +72,15 @@ we can get the follow such an output:
 {
     "item_id": "-0TffRSXXIlBYVbb5AwfTg",
     "summarization": "Young adults, especially those in their 20s and 30s who are looking for
-     a unique dining experience with a modern twist on traditional Indian food, may enjoy IndeBlue. 
-     Additionally, individuals seeking a fun night out with friends or a special occasion celebration
-      would also be a good fit.",
+                    a unique dining experience with a modern twist on traditional Indian food, 
+                    may enjoy IndeBlue. Additionally, individuals seeking a fun night out with 
+                    friends or a special occasion celebrationwould also be a good fit.",
     "reasoning": "The business's categories include Cocktail Bars, Nightlife, and Event Planning & Services,
-     indicating that it caters to young adults who are looking for a lively atmosphere. The user feedback 
-     highlights the restaurant's modern take on traditional Indian food, which may appeal to those seeking 
-     something new and exciting. Furthermore, several users mention enjoying happy hour specials, 
-     live music, and a fun night out with friends, suggesting that IndeBlue is suitable for groups of 
-     young adults."
+                  indicating that it caters to young adults who are looking for a lively atmosphere. The user 
+                  feedback highlights the restaurant's modern take on traditional Indian food, which may appeal
+                  to those seeking something new and exciting. Furthermore, several users mention enjoying happy hour specials, 
+                  live music, and a fun night out with friends, suggesting that IndeBlue is suitable for groups of 
+                  young adults."
 },
 ```
 For the generation of **user profiles**, readers also need to construct the input JSON, as shown below:
@@ -102,10 +102,20 @@ python ./dataset_process/user_profile_generation/user_generation.py
 ```
 we can get the follow such a user profile output:
 ```
-
+ {
+        "user_id": "-0H6Rm6dCi3pkFBC26HsoQ",
+        "summarization": "This user likely enjoys casual, family-friendly dining experiences with good 
+                          food and service. They also appreciate traditional barbecue, Southern comfort 
+                          food, and hearty breakfast options.",
+        "reasoning": "Based on the reviews provided, it appears that this user values generous portions, 
+                      good deals, and a comfortable atmosphere. They seem to enjoy a variety of cuisines, 
+                      including Italian, BBQ, and Southern comfort food. The tone of their reviews suggests 
+                      a casual and enthusiastic approach to dining experiences."
+ }
 ```
 
 ### Hard Negative Sampling
+
 
 
 ### 
