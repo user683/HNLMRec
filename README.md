@@ -110,6 +110,8 @@ we can get the follow such a user profile output:
 
 ### 
 
+## Citation
+
 ## 👏 Acknowledgement
 
 We would like to extend our special thanks to the authors of [RLMRec](https://github.com/HKUDS/RLMRec) 
