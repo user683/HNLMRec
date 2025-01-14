@@ -88,5 +88,5 @@ with open("Yelp_train_data.json", "r", encoding="utf-8") as f:
         hard_negative_dict[user_id][item_id] = embeddings.cpu().numpy().tolist()  # Save as nested list format
 
 # Save dictionary to file
-with open('hard_negative_dict_Yelp_qwen0-5_lora.pkl', 'wb') as f:
+with open('hard_negative_dict_Yelp_Llama-3-8B_lora.pkl', 'wb') as f:
     pickle.dump(hard_negative_dict, f)
