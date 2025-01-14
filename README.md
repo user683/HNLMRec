@@ -130,13 +130,13 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
           f'INTERACTED PRODUCT: \n{{\n"item_id": "{row["item_id"]}", \n"title": "{title}", \n"item_profile": "{item_profile}"\n}}'
   }
   ```
-  Then run the following code to obtain the titles of the hard negative samples：
+  Then run the following in `dataset_process/hard_negative_generation` code to obtain the titles of the hard negative samples：
   ```
-  python 
+  python negative_sample_generation.py
   ```
   Finally, run the following code to obtain the text embeddings.
   ```
-  python 
+  python negative_sample_to_emb.py
   ```
 - For the second method, you first need to construct the JSON-formatted data required for fine-tuning. 
   After fine-tuning the LLM, use the LLM to directly output the embeddings of hard negative samples for users.
@@ -151,12 +151,12 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
   }
   ```
  Fine-tuning is performed by running the files under `model/model_fine_tuning`:
- ```
- python 
+ ```bash
+ sh embeddings_training.sh
  ```
  Run the code in `./dataset_process/hard_negative_sampling_embeddings` to obtain hard negative sample embeddings.
- 
  ```
+ 
  ```
 
 ---
@@ -169,7 +169,7 @@ python  main.py --model LightGCN --gpu 1
 The model parameters can be adjusted by modifying the `[model_name].yaml` file located in `model/model/training/conf`.
 
 ---
-## Citation
+## 📡 Citation
 
 ## 👏 Acknowledgement
 
