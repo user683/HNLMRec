@@ -55,13 +55,32 @@ semantic negative sampling, and semantic alignment.
 ### User Profile and Item Profile Generation
 For the item profile generation, you need first to contract such json file, which is shown as follows:
 ```
-{ 
-  
+{
+        "item_id": row['item_id'],
+        "name": row['name'],  
+        "city": row["city"], 
+        "categories": row['category'],
 }
 ```
 Then you can run follow code to generate Item profile:
 ```bash
 python ./dataset_process/item_profile_generation/item_generation.py
+```
+we can get the follow such an output:
+```
+{
+    "item_id": "-0TffRSXXIlBYVbb5AwfTg",
+    "summarization": "Young adults, especially those in their 20s and 30s who are looking for
+     a unique dining experience with a modern twist on traditional Indian food, may enjoy IndeBlue. 
+     Additionally, individuals seeking a fun night out with friends or a special occasion celebration
+      would also be a good fit.",
+    "reasoning": "The business's categories include Cocktail Bars, Nightlife, and Event Planning & Services,
+     indicating that it caters to young adults who are looking for a lively atmosphere. The user feedback 
+     highlights the restaurant's modern take on traditional Indian food, which may appeal to those seeking 
+     something new and exciting. Furthermore, several users mention enjoying happy hour specials, 
+     live music, and a fun night out with friends, suggesting that IndeBlue is suitable for groups of 
+     young adults."
+},
 ```
 
 
