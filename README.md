@@ -53,12 +53,26 @@ The pipeline of our model primarily consists of three parts: user-item profile g
 semantic negative sampling, and semantic alignment.
 
 ### User Profile and Item Profile Generation
-
+For the item profile generation, you need first to contract such json file, which is shown as follows:
 ```
 { 
   
 }
 ```
+Then you can run follow code to generate Item profile:
+```bash
+python ./dataset_process/item_profile_generation/item_generation.py
+```
 
+
+### Hard Negative Sampling
+
+
+### 
 
 ## 👏 Acknowledgement
+
+We would like to extend our special thanks to the authors of [RLMRec](https://github.com/HKUDS/RLMRec) 
+and [SELFRec](https://github.com/Coder-Yu/SELFRec), as our code implementation partially relies on 
+these frameworks. We have duly cited their work in our paper. Additionally, the framework for 
+fine-tuning our model is implemented based on this [repo](https://github.com/yuanzhoulvpi2017/SentenceEmbedding).
