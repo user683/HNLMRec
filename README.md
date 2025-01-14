@@ -24,7 +24,10 @@ pip install torch>=1.7.0
 ```
 
 ## 📈 Dataset Information and Processing Details
-
+In our paper, we conducted experiments using four datasets ( Toys & Games, CDs & Vinyl, 
+Yelp2018, Amazon Electronics 2023), among which the Amazon Fashion dataset was primarily 
+used to validate the generalization capability of the fine-tuned model on new datasets. 
+The statistical information for all datasets is presented in the table below:
 ## 🔬 Model Training and Inference
 
 ## 👏 Acknowledgement
