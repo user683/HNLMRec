@@ -24,6 +24,7 @@ pip install torch>=1.7.0
 ```
 
 ## 📈 Dataset Information and Processing Details
+
 In our paper, we conducted experiments using four datasets ( Toys & Games, CDs & Vinyl, 
 Yelp2018, Amazon Electronics 2023), among which the Amazon Fashion dataset was primarily 
 used to validate the generalization capability of the fine-tuned model on new datasets. 
@@ -32,12 +33,32 @@ The statistical information for all datasets is presented in the table below:
 |         Dataset         | #Users | #Items | #Interactions |  Density   |
 |:-----------------------:|:------:|:------:|:-------------:|:----------:|
 |      Toys & Games       | 22,338 | 9,023  |    200,511    | 1.0 × 10⁻³ |
-|       CDs & Vinyl       | 7,175  | 10,611 |   1,153,797   | 1.5 × 10⁻³ |
-|        Yelp2018         | 8,090  | 13,878 |    398,216    | 3.5 × 10⁻³ |
-| Amazon Electronics 2023 | 8,735  | 13,143 |    354,933    | 3.1 × 10⁻³ |
+|       CDs & Vinyl       | 19,385 | 8,279  |    186,535    | 1.2 × 10⁻³ |
+|        Yelp2018         | 29,832 | 16,781 |    513,976    | 1.0 × 10⁻³ |
+| Amazon Electronics 2023 | 97,570 | 44,669 |    178,259    | 4.1 × 10⁻⁷ |
 
-
+For the Toys & Games dataset, we first filtered out interactions with ratings below 4 
+and selected records within the date range from 2015-01-01 to 2018-01-01. Additionally,
+we retained only users and items with at least 10 interactions. For the CDs & Vinyl 
+dataset, we selected records within the date range from 2014-01-01 to 2016-01-01, with
+the remaining processing steps consistent with the above. For the Yelp2018 dataset, 
+we selected records within the date range from 2015-01-01 to 2018-01-01, with the
+remaining processing steps also consistent with the above. As for the Amazon 
+Electronics 2023 dataset, we retained only interactions with ratings of 3 or higher,
+within the date range from 2010-01-01 to 2018-01-01.
 
 ## 🔬 Model Training and Inference
+
+The pipeline of our model primarily consists of three parts: user-item profile generation, 
+semantic negative sampling, and semantic alignment.
+
+### User Profile and Item Profile Generation
+
+```
+{ 
+  
+}
+```
+
 
 ## 👏 Acknowledgement
