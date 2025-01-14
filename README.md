@@ -16,7 +16,15 @@ LLM-driven recommendation methods across multiple datasets, providing new soluti
 traditional RS with LLMs.
 
 ## 📝 Environment
-
-
+```bash
+pip install numba==0.53.1
+pip intall numpy==1.20.3
+pip install scipy==1.6.2
+pip install torch>=1.7.0
+```
 
 ## 📈 Dataset Information and Processing Details
+
+## 🔬 Model Training and Inference
+
+## 👏 Acknowledgement
