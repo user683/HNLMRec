@@ -86,9 +86,23 @@ we can get the follow such an output:
 For the generation of **user profiles**, readers also need to construct the input JSON, as shown below:
 
 ```
+items.append({
+            "title": row['title'],
+            "description": row['description'],
+            "review": row['review_text']
+        })
 {
- 
+  "user_id": user_id, 
+  "prompt": "PURCHASED PRODUCTS: \n" + json.dumps(items, ensure_ascii=False, indent=4)
 }
+```
+Then you can run follow code to generate User profile:
+```bash
+python ./dataset_process/user_profile_generation/user_generation.py
+```
+we can get the follow such a user profile output:
+```
+
 ```
 
 ### Hard Negative Sampling
