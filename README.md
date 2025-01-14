@@ -156,7 +156,7 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
  ```
  Run the code in `./dataset_process/hard_negative_sampling_embeddings` to obtain hard negative sample embeddings.
  ```
- 
+ python negative_samples_with_fn.py
  ```
 
 ---
