@@ -51,7 +51,7 @@ within the date range from 2010-01-01 to 2018-01-01.
 
 The pipeline of our model primarily consists of three parts: **user-item profile generation**, 
 **semantic negative sampling**, and **semantic alignment**.
-
+***
 ### User Profile and Item Profile Generation (e.g., Yelp2018)
 
 For the **item profile** generation, you need first to contract such json file, which is shown as follows:
@@ -63,9 +63,9 @@ For the **item profile** generation, you need first to contract such json file, 
         "categories": row['category'],
 }
 ```
-Then you can run follow code to generate Item profile:
+You can then run the following code in `./dataset_process/item_profile_generation/` to generate item profiles:
 ```
-python ./dataset_process/item_profile_generation/item_generation.py
+python item_generation.py
 ```
 we can get the follow such an output:
 ```
@@ -83,6 +83,7 @@ we can get the follow such an output:
                   young adults."
 },
 ```
+***
 For the generation of **user profiles**, readers also need to construct the input JSON, as shown below:
 
 ```
@@ -96,9 +97,9 @@ items.append({
   "prompt": "PURCHASED PRODUCTS: \n" + json.dumps(items, ensure_ascii=False, indent=4)
 }
 ```
-Then you can run follow code to generate User profile:
+Then you can run the following code in `./dataset_process/user_profile_generation/` to generate user profiles:
 ```
-python ./dataset_process/user_profile_generation/user_generation.py
+python user_generation.py
 ```
 we can get the follow such a user profile output:
 ```
@@ -113,7 +114,7 @@ we can get the follow such a user profile output:
                       a casual and enthusiastic approach to dining experiences."
  }
 ```
-
+***
 ### Hard Negative Sampling
 The paper proposes two negative sampling methods: (1)the first directly generates hard negative samples for 
 user-item interaction pairs. (2) the second leverages collaborative signals 
@@ -122,25 +123,52 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
 - The first method for generating hard negative samples primarily consists of two steps: first, 
   generating textual descriptions of the hard negative samples, and then converting the text into embeddings.
   
-First, you need to construct the input data in JSON format:
+  First, you need to construct the input data in JSON format:
+  ```
+  {
+          f'USER INFORMATION: \n{{\n"user_id": "{row["user_id"]}", \n"user_profile": "{user_profile}"\n}}\n'
+          f'INTERACTED PRODUCT: \n{{\n"item_id": "{row["item_id"]}", \n"title": "{title}", \n"item_profile": "{item_profile}"\n}}'
+  }
+  ```
+  Then run the following code to obtain the titles of the hard negative samples：
+  ```
+  python 
+  ```
+  Finally, run the following code to obtain the text embeddings.
+  ```
+  python 
+  ```
+- For the second method, you first need to construct the JSON-formatted data required for fine-tuning. 
+  After fine-tuning the LLM, use the LLM to directly output the embeddings of hard negative samples for users.
+  
+  The json data format required for fine-tuning is as follows:
+  ```
+  { 
+   Query: {[user_emebdings], user prfile,\n [item_embeddings]
+   Pos: [hard negative emebdings]
+   Neg: [item_emebeddings]
+   } 
+  }
+  ```
+ Fine-tuning is performed by running the files under `model/model_fine_tuning`:
+ ```
+ python 
+ ```
+ Run the code in `./dataset_process/hard_negative_sampling_embeddings` to obtain hard negative sample embeddings.
+ 
+ ```
+ ```
+
+---
+After obtaining the hard negative sample embeddings, you can run the following code 
+in `model/model_trianing/` to train recommendation models and infer:
 ```
-{
-        f'USER INFORMATION: \n{{\n"user_id": "{row["user_id"]}", \n"user_profile": "{user_profile}"\n}}\n'
-        f'INTERACTED PRODUCT: \n{{\n"item_id": "{row["item_id"]}", \n"title": "{title}", \n"item_profile": "{item_profile}"\n}}'
-}
-```
-Then run the following code to obtain the titles of the hard negative samples：
-```
-python 
-```
-Finally, run the following code to obtain the text embeddings.
-```
-python 
+python  main.py --model LightGCN --gpu 1
 ```
 
+The model parameters can be adjusted by modifying the `[model_name].yaml` file located in `model/model/training/conf`.
 
-### 
-
+---
 ## Citation
 
 ## 👏 Acknowledgement
@@ -149,3 +177,4 @@ We would like to extend our special thanks to the authors of [RLMRec](https://gi
 and [SELFRec](https://github.com/Coder-Yu/SELFRec), as our code implementation partially relies on 
 these frameworks. We have duly cited their work in our paper. Additionally, the framework for 
 fine-tuning our model is implemented based on this [repo](https://github.com/yuanzhoulvpi2017/SentenceEmbedding).
+
