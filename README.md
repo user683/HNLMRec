@@ -51,6 +51,28 @@ within the date range from 2010-01-01 to 2018-01-01.
 
 The pipeline of our model primarily consists of three parts: **user-item profile generation**, 
 **semantic negative sampling**, and **semantic alignment and Training**.
+
+```
+|--- dataset_process
+|    |--- hard_negative_generation
+|    |    |--- negative_sample_generation.py  
+|    |    |--- negative_sample_prompt_S_H.txt  
+|    |    |--- negative_sample_to_emb.py  
+|    |    |--- hard_negative_sampling_embeddings
+|    |        |--- negative_samples_with_fn.py  
+|    |--- item_profile_generation
+|    |    |--- item_generation.py  
+|    |    |--- item_system_prompt_S_v.txt  
+|    |--- user_profile_generation
+|         |--- user_generation.py  
+|         |--- user_system_prompt_S_u.txt  
+|--- model
+|    |--- model_fine_tuning  
+|    |--- model_training  
+|    |--- model_pipeline.jpg  
+|--- README.md  
+```
+
 ***
 ### User Profile and Item Profile Generation (e.g., Yelp2018)
 
