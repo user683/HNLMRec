@@ -81,7 +81,6 @@ class LightGCN(GraphRecommender):
 
                 mixed_neg_item_emb = alpha * hard_negative_emb + (1 - alpha) * neg_item_emb
 
-
                 pos_sim = torch.sum(user_emb * pos_item_emb, dim=1)
                 neg_sim = torch.sum(user_emb * mixed_neg_item_emb, dim=1)
 
