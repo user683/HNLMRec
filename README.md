@@ -189,7 +189,7 @@ in `model_structure/model_trianing/` to train recommendation models and infer:
 python  main.py --model LightGCN --gpu 1
 ```
 
-The model parameters can be adjusted by modifying the `[model_name].yaml` file located in `model/model/training/conf`.
+The model parameters can be adjusted by modifying the `[model_name].yaml` file located in `model_structure/model/training/conf`.
 
 ---
 ## 📡 Citation
