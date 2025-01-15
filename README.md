@@ -184,7 +184,7 @@ to supervise the fine-tuning of LLMs, thereby directly generating hard negative 
 ---
 ### Training
 After obtaining the hard negative sample embeddings, you can run the following code 
-in `model/model_trianing/` to train recommendation models and infer:
+in `model_structure/model_trianing/` to train recommendation models and infer:
 ```
 python  main.py --model LightGCN --gpu 1
 ```
