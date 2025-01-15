@@ -1,0 +1,29 @@
+#training.set: ./dataset/CDs/train.txt
+#test.set: ./dataset/CDs/test.txt
+training.set: ./dataset/yelp2018/train.txt
+test.set: ./dataset/yelp2018/test.txt
+
+#training.set: ./dataset/Toys/train.txt
+#test.set: ./dataset/Toys/test.txt
+
+
+model:
+  name: SGL
+  type: graph
+
+item.ranking.topN: [10,20]
+
+embedding.size: 256
+max.epoch: 100
+batch.size: 2048
+learning.rate: 0.001
+reg.lambda: 0.0001
+
+SGL:
+  n_layer: 3
+  lambda: 0.1
+  drop_rate: 0.1
+  aug_type: 1
+  temp: 0.2
+
+output: ./results/

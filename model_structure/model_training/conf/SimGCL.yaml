@@ -1,0 +1,24 @@
+#training.set: ./dataset/yelp2018/train.txt
+#test.set: ./dataset/yelp2018/test.txt
+training.set: ./dataset/Toys/train.txt
+test.set: ./dataset/Toys/test.txt
+#training.set: ./dataset/CDs/train.txt
+#test.set: ./dataset/CDs/test.txt
+model:
+  name: SimGCL
+  type: graph
+
+item.ranking.topN: [10,20]
+
+embedding.size: 256
+max.epoch: 70
+batch.size: 1024
+learning.rate: 0.001
+reg.lambda: 0.0001
+
+SimGCL:
+  n_layer: 3
+  lambda: 0.01
+  eps: 0.1
+
+output: ./results/
