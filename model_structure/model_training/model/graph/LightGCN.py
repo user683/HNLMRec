@@ -17,11 +17,9 @@ import pickle
 
 
 def CL_loss(id_emb_user, id_emb_item, hard_negative_proj, temperature=0.2):
-    # 对比学习损失
     positive_similarity = F.cosine_similarity(id_emb_user, id_emb_item)
     negative_similarity = F.cosine_similarity(id_emb_user, hard_negative_proj)
 
-    # 损失函数计算
     loss = - torch.log(torch.exp(positive_similarity / temperature) /
                        (torch.exp(positive_similarity / temperature) + torch.exp(negative_similarity / temperature)))
     return loss.mean()
@@ -36,7 +34,6 @@ class LightGCN(GraphRecommender):
         self.bpr_loss = bpr_loss
         self.model = LGCN_Encoder(self.data, self.emb_size, self.n_layers)
 
-        # 定义一个神经网络适配器，将嵌入降维到 512
         self.adapter = nn.Sequential(
             nn.Linear(args.input_size, 2048),
             nn.ReLU(),
@@ -46,7 +43,6 @@ class LightGCN(GraphRecommender):
             nn.ReLU()
         ).to(self.device)
 
-        # 读取和预处理硬负例嵌入
         with open('hard_negative_dict_Yelp_llama3_lora.pkl', 'rb') as f:
             self.hard_negative = pickle.load(f)
 
@@ -59,7 +55,6 @@ class LightGCN(GraphRecommender):
                 user_idx, pos_idx, neg_idx, target_index = batch
                 rec_user_emb, rec_item_emb = model()
 
-                # 收集硬负例嵌入并应用适配器
                 hard_negative_emb_np = np.empty((len(user_idx), args.inpu_size), dtype=np.float32)
 
                 for i, (user, pos) in enumerate(zip(user_idx, pos_idx)):
@@ -78,17 +73,15 @@ class LightGCN(GraphRecommender):
                 hard_negative_emb = torch.from_numpy(hard_negative_emb_np).to(self.device)
                 hard_negative_emb = self.adapter(hard_negative_emb)
 
-                # 动态调整 alpha 值
                 alpha = 0.0001  # Toys 0.01
 
-                # 获取正负样本的嵌入
                 neg_item_emb = rec_item_emb[neg_idx]
                 pos_item_emb = rec_item_emb[pos_idx]
                 user_emb = rec_user_emb[user_idx]
 
                 mixed_neg_item_emb = alpha * hard_negative_emb + (1 - alpha) * neg_item_emb
 
-                # 计算对比损失
+
                 pos_sim = torch.sum(user_emb * pos_item_emb, dim=1)
                 neg_sim = torch.sum(user_emb * mixed_neg_item_emb, dim=1)
 
@@ -100,7 +93,6 @@ class LightGCN(GraphRecommender):
 
                 total_loss = batch_loss + l2_loss + 0.001 * cl_loss
 
-                # 优化步骤
                 optimizer.zero_grad()
                 total_loss.backward()
                 optimizer.step()
