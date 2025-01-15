@@ -15,7 +15,7 @@ def print_models(title, models):
 if __name__ == '__main__':
     # Define available models
     models = {
-        'Graph-Based Baseline Models': ['LightGCN', 'DirectAU', 'MF', 'NGCF','DGCF'],
+        'Graph-Based Baseline Models': ['LightGCN', 'DirectAU', 'MF', 'NGCF', 'DGCF'],
         'Self-Supervised Graph-Based Models': ['SGL', 'SimGCL', 'SEPT', 'MHCN', 'BUIR', 'SelfCF', 'SSL4Rec', 'XSimGCL',
                                                'NCL', 'MixGCF', 'SCCF'],
         'Sequential Baseline Models': ['SASRec'],
@@ -23,7 +23,6 @@ if __name__ == '__main__':
     }
 
     # Parse arguments
-
 
     # Set GPU device
     if args.gpu >= 0:
