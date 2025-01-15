@@ -1,0 +1,25 @@
+training.set: ./dataset/yelp2018/train.txt
+test.set: ./dataset/yelp2018/test.txt
+
+#training.set: ./dataset/Toys/train.txt
+#test.set: ./dataset/Toys/test.txt
+
+#training.set: ./dataset/CDs/train.txt
+#test.set: ./dataset/CDs/test.txt
+
+model:
+  name: LightGCN
+  type: graph
+
+item.ranking.topN: [10,20]
+# Yelp2020 emb 512 batch size 10000
+embedding.size: 512
+max.epoch: 100
+batch.size: 10000
+learning.rate: 0.001
+reg.lambda: 0.0001
+
+LightGCN:
+  n_layer: 3
+
+output: ./results/
