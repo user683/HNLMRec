@@ -13,7 +13,7 @@ semantic shift and lack of behavioral constraints. To address these challenges, 
 called **HNLMRec**, which is based on fine-tuning LLMs supervised by collaborative signals.
 Experimental results show that this framework outperforms traditional negative sampling and other
 LLM-driven recommendation methods across multiple datasets, providing new solutions for empowering 
-traditional RS with LLMs.
+traditional RS with LLMs
 
 ## 📝 Environment
 ```bash
