@@ -1,4 +1,4 @@
-# Can LLM-Driven Hard Negative Sampling Empower Graph Collaborative Filtering? Findings and Potentials.
+# Can LLM-Driven Hard Negative Sampling Empower Collaborative Filtering? Findings and Potentials.
 
 <p align="center">
 <img src="model_pipeline.jpg" alt="RLMRec" />
