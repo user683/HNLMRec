@@ -1,19 +1,10 @@
 # Can LLM-Driven Hard Negative Sampling Empower Graph Collaborative Filtering? Findings and Potentials.
 
 <p align="center">
-<img src="model_pipeline.jpg" alt="RLMRec" />
+<img src="model_framework.pdf" alt="RLMRec" />
 </p>
 
-This paper introduces the concept of Semantic Negative Sampling and explores how to optimize LLMs for 
-high-quality, hard negative sampling. Specifically, we design an experimental pipeline that includes 
-three main modules: profile generation, semantic negative sampling, and semantic alignment, to verify 
-the potential of LLM-driven challenging negative sampling in enhancing the accuracy of collaborative 
-filtering (CF). Further analysis reveals that this gap primarily arises from two major challenges: 
-semantic shift and lack of behavioral constraints. To address these challenges, we propose a framework
-called **HNLMRec**, which is based on fine-tuning LLMs supervised by collaborative signals.
-Experimental results show that this framework outperforms traditional negative sampling and other
-LLM-driven recommendation methods across multiple datasets, providing new solutions for empowering 
-traditional RS with LLMs.
+This woork proposes **HNLMRec**, a generative semantic negative sampling framework. Leveraging the semantic reasoning capabilities of Large Language Models (LLMs), HNLMRec directly generates negative samples that are behaviorally distinct yet semantically relevant with respect to user preferences. Furthermore, we integrate collaborative filtering signals into the LLM via supervised fine-tuning, guiding the model to synthesize more reliable and informative hard negatives. Extensive experiments on multiple real-world datasets demonstrate that HNLMRec significantly outperforms traditional methods and LLM-enhanced baselines, while effectively mitigating popularity bias and data sparsity, thereby improving generalization.
 
 ## 📝 Environment
 ```bash
