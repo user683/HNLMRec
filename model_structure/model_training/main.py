@@ -22,8 +22,6 @@ if __name__ == '__main__':
         'Self-Supervised Sequential Models': ['CL4SRec', 'BERT4Rec']
     }
 
-    # Parse arguments
-
     # Set GPU device
     if args.gpu >= 0:
         os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu)
