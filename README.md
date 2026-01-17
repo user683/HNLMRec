@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Hard Negative Sampling via Large Language Models for Recommendation.
-=======
-# Can LLM-Driven Hard Negative Sampling Empower Collaborative Filtering? Findings and Potentials.
->>>>>>> f06147d32dc02ffd8017a74e821b22347da8730b
 
 <p align="center">
 <img src="model_framework.png" alt="RLMRec" />
