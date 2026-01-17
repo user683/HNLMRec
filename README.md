@@ -1,4 +1,4 @@
-# Can LLM-Driven Hard Negative Sampling Empower Graph Collaborative Filtering? Findings and Potentials.
+# Hard Negative Sampling via Large Language Models for Recommendation.
 
 <p align="center">
 <img src="model_framework.pdf" alt="RLMRec" />
