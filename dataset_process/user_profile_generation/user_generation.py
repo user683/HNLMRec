@@ -61,7 +61,6 @@ with open(f'./user_prompts_file/user_prompts_{args.num}.json', 'r', encoding='ut
 
 
 # print("------------------------------------------")
-# print(example_prompts['A138IVRMXFBQCO'])
 
 
 class Colors:
