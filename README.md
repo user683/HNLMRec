@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 # Hard Negative Sampling via Large Language Models for Recommendation.
+=======
+# Can LLM-Driven Hard Negative Sampling Empower Collaborative Filtering? Findings and Potentials.
+>>>>>>> f06147d32dc02ffd8017a74e821b22347da8730b
 
 <p align="center">
-<img src="model_framework.pdf" alt="RLMRec" />
+<img src="model_framework.png" alt="RLMRec" />
 </p>
 
 This woork proposes **HNLMRec**, a generative semantic negative sampling framework. Leveraging the semantic reasoning capabilities of Large Language Models (LLMs), HNLMRec directly generates negative samples that are behaviorally distinct yet semantically relevant with respect to user preferences. Furthermore, we integrate collaborative filtering signals into the LLM via supervised fine-tuning, guiding the model to synthesize more reliable and informative hard negatives. Extensive experiments on multiple real-world datasets demonstrate that HNLMRec significantly outperforms traditional methods and LLM-enhanced baselines, while effectively mitigating popularity bias and data sparsity, thereby improving generalization.
